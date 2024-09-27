@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Social Media Links</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Social Media Information Sharing</h1>
+
+    <!-- Display the list of social media links -->
+    <ul>
+        <% links.forEach(link => { %>
+            <li>
+                <strong><%= link.platform %></strong>: 
+                <a href="<%= link.accountLink %>" target="_blank"><%= link.accountLink %></a>
+                <form action="/social-media-links/<%= link._id %>/update" method="POST">
+                    <input type="text" name="platform" value="<%= link.platform %>">
+                    <input type="text" name="accountLink" value="<%= link.accountLink %>">
+                    <button type="submit">Update</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+    <!-- Form to add a new link -->
+    <form action="/social-media-links/add" method="POST">
+        <input type="text" name="platform" placeholder="Platform">
+        <input type="text" name="accountLink" placeholder="Account Link">
+        <button type="submit">Add Social Media Link</button>
+    </form>
+</body>
+</html>

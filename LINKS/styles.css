@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: pink;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.link-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px); /* Allows three cards per row with spacing */
+    transition: transform 0.2s ease;
+}
+
+.link-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.link-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.link-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-card:hover {
+    transform: translateY(-5px); /* Adds a hover effect */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .link-card {
+        width: calc(50% - 20px); /* Two cards per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .link-card {
+        width: 100%; /* One card per row on mobile */
+    }
+}
